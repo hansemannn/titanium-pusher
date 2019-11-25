@@ -1,0 +1,4 @@
+framework module TaskQueue {
+  header "TaskQueue-Swift.h"
+  requires objc
+}

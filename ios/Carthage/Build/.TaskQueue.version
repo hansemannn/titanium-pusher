@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.1.1",
+  "iOS" : [
+    {
+      "name" : "TaskQueue",
+      "hash" : "a481c9a10949fd259c93b22b2c234bcef661814459796fb2d861784bd045e040"
+    }
+  ]
+}

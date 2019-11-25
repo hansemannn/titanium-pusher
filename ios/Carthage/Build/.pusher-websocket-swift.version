@@ -1,0 +1,9 @@
+{
+  "commitish" : "6.1.0",
+  "iOS" : [
+    {
+      "name" : "PusherSwift",
+      "hash" : "14672496259353635ae4ab752663119a100838e4d86a1bac34cfc47c634d214b"
+    }
+  ]
+}
