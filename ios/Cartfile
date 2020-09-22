@@ -1,1 +1,1 @@
-github "pusher/pusher-websocket-swift"
+github "pusher/pusher-websocket-swift" == 8.0.0

@@ -2,12 +2,14 @@
 
 Reachability.swift is a replacement for Apple's Reachability sample, re-written in Swift with closures.
 
-It is compatible with **iOS** (8.0 - 11.0), **OSX** (10.9 - 10.13) and **tvOS** (9.0 - 11.0)
+It is compatible with **iOS** (8.0 - 12.0), **OSX** (10.9 - 10.14) and **tvOS** (9.0 - 12.0)
 
 Inspired by https://github.com/tonymillion/Reachability
 
 ## Supporting **Reachability.swift**
 Keeping **Reachability.swift** up-to-date is a time consuming task. Making updates, reviewing pull requests, responding to issues and answering emails all take time. 
+
+Please consider sponsoring me https://github.com/sponsors/ashleymills, it's a great way to say thanks!
 
 If you're an iOS developer who's looking for a quick and easy way to create App Store screenshots, please try out my app [Screenshot Producer](https://itunes.apple.com/app/apple-store/id1252374855?pt=215893&ct=reachability&mt=8)…
 
@@ -19,46 +21,6 @@ And don't forget to **★** the repo. This increases its visibility and encourag
 
 Thanks
 Ash
-
-# IMPORTANT
-
-## Version 4.0 breaking changes
-
-### CocoaPods:
-
-If you're adding **Reachability.swift** using CocoaPods, note that the framework name has changed from `ReachabilitySwift` to `Reachability` (for consistency with Carthage)
-
-### Previously:
-
-```swift
-enum NetworkStatus {
-    case notReachable, reachableViaWiFi, reachableViaWWAN
-}
-var currentReachabilityStatus: NetworkStatus
-```
-
-### Now:
-
-```swift
-enum Connection {
-    case none, wifi, cellular
-}
-var connection: Connection
-```
-
-### Other changes:
-
-- `reachableOnWWAN` has been renamed to `allowsCellularConnection`
-
-- `reachability.currentReachabilityString` has been deprecated. Use `"\(reachability.connection)"` instead.
-
-- `isReachable` has been deprecated. Use `connection != .none` instead.
-
-- `isReachableViaWWAN` has been deprecated. Use `connection == .cellular` instead.
-
-- The notification for reachability changes has been renamed from `ReachabilityChangedNotification` to `Notification.Name.reachabilityChanged`
-
-- All closure callbacks and notification are fired on the main queue (including when `startNotifier()` is called)
 
 
 ## Got a problem?
@@ -115,13 +77,20 @@ To install Reachability.swift with Carthage:
 [Homebrew]: http://brew.sh
 [Photo Flipper]: https://itunes.apple.com/app/apple-store/id749627884?pt=215893&ct=GitHubReachability&mt=8
 
+### Swift Package Manager (SPM)
+The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler. To integrate using Apple's Swift package manager from xcode :
+
+1. File -> Swift Packages -> Add Package Dependency...
+
+2. Enter package URL : https://github.com/ashleymills/Reachability.swift, choose the latest release
+
 ## Example - closures
 
 NOTE: All closures are run on the **main queue**.
 
 ```swift
 //declare this property where it won't go out of scope relative to your listener
-let reachability = Reachability()!
+let reachability = try! Reachability()
 
 reachability.whenReachable = { reachability in
     if reachability.connection == .wifi {
@@ -153,7 +122,7 @@ NOTE: All notifications are delivered on the **main queue**.
 
 ```swift
 //declare this property where it won't go out of scope relative to your listener
-let reachability = Reachability()!
+let reachability = try! Reachability()
 
 //declare this inside of viewWillAppear
 
@@ -177,7 +146,7 @@ and
       print("Reachable via WiFi")
   case .cellular:
       print("Reachable via Cellular")
-  case .none:
+  case .unavailable:
     print("Network not reachable")
   }
 }

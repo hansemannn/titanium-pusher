@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A2EB83A2246E5ED00158B31 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2EB8362246E5ED00158B31 /* Reachability.framework */; };
-		3A2EB83B2246E5ED00158B31 /* PusherSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2EB8372246E5ED00158B31 /* PusherSwift.framework */; };
-		3A2EB83C2246E5ED00158B31 /* TaskQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2EB8382246E5ED00158B31 /* TaskQueue.framework */; };
-		3A2EB83D2246E5ED00158B31 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2EB8392246E5ED00158B31 /* Starscream.framework */; };
-		3A2EB84C2246EB7000158B31 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2EB84B2246EB7000158B31 /* CryptoSwift.framework */; };
+		3A398021251A2A6800A9DE51 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A39801E251A2A6800A9DE51 /* Starscream.framework */; };
+		3A398022251A2A6800A9DE51 /* PusherSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A39801F251A2A6800A9DE51 /* PusherSwift.framework */; };
+		3A398023251A2A6800A9DE51 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A398020251A2A6800A9DE51 /* Reachability.framework */; };
 		DB24E03C20766AC90033B2B1 /* TiPusherChannelProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24E03B20766AC90033B2B1 /* TiPusherChannelProxy.swift */; };
 		DB34CDE0207B998A005F8E8C /* TiPusherModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34CDDE207B998A005F8E8C /* TiPusherModuleAssets.m */; };
 		DB34CDE1207B998A005F8E8C /* TiPusherModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34CDDF207B998A005F8E8C /* TiPusherModuleAssets.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,11 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A2EB8362246E5ED00158B31 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = platform/Reachability.framework; sourceTree = "<group>"; };
-		3A2EB8372246E5ED00158B31 /* PusherSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PusherSwift.framework; path = platform/PusherSwift.framework; sourceTree = "<group>"; };
-		3A2EB8382246E5ED00158B31 /* TaskQueue.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TaskQueue.framework; path = platform/TaskQueue.framework; sourceTree = "<group>"; };
-		3A2EB8392246E5ED00158B31 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = platform/Starscream.framework; sourceTree = "<group>"; };
-		3A2EB84B2246EB7000158B31 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = platform/CryptoSwift.framework; sourceTree = "<group>"; };
+		3A39801E251A2A6800A9DE51 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = platform/Starscream.framework; sourceTree = "<group>"; };
+		3A39801F251A2A6800A9DE51 /* PusherSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PusherSwift.framework; path = platform/PusherSwift.framework; sourceTree = "<group>"; };
+		3A398020251A2A6800A9DE51 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = platform/Reachability.framework; sourceTree = "<group>"; };
 		DB24E03B20766AC90033B2B1 /* TiPusherChannelProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiPusherChannelProxy.swift; path = Classes/TiPusherChannelProxy.swift; sourceTree = "<group>"; };
 		DB34CDDE207B998A005F8E8C /* TiPusherModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPusherModuleAssets.m; path = Classes/TiPusherModuleAssets.m; sourceTree = SOURCE_ROOT; };
 		DB34CDDF207B998A005F8E8C /* TiPusherModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPusherModuleAssets.h; path = Classes/TiPusherModuleAssets.h; sourceTree = SOURCE_ROOT; };
@@ -45,12 +41,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2EB84C2246EB7000158B31 /* CryptoSwift.framework in Frameworks */,
-				3A2EB83C2246E5ED00158B31 /* TaskQueue.framework in Frameworks */,
-				3A2EB83D2246E5ED00158B31 /* Starscream.framework in Frameworks */,
 				DBB66221208481A800EAD6D9 /* TitaniumKit.framework in Frameworks */,
-				3A2EB83B2246E5ED00158B31 /* PusherSwift.framework in Frameworks */,
-				3A2EB83A2246E5ED00158B31 /* Reachability.framework in Frameworks */,
+				3A398022251A2A6800A9DE51 /* PusherSwift.framework in Frameworks */,
+				3A398023251A2A6800A9DE51 /* Reachability.framework in Frameworks */,
+				3A398021251A2A6800A9DE51 /* Starscream.framework in Frameworks */,
 				DB34CDE6207B9EBD005F8E8C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,11 +85,9 @@
 		DB34CDE2207B9D6A005F8E8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A2EB84B2246EB7000158B31 /* CryptoSwift.framework */,
-				3A2EB8372246E5ED00158B31 /* PusherSwift.framework */,
-				3A2EB8362246E5ED00158B31 /* Reachability.framework */,
-				3A2EB8392246E5ED00158B31 /* Starscream.framework */,
-				3A2EB8382246E5ED00158B31 /* TaskQueue.framework */,
+				3A39801F251A2A6800A9DE51 /* PusherSwift.framework */,
+				3A398020251A2A6800A9DE51 /* Reachability.framework */,
+				3A39801E251A2A6800A9DE51 /* Starscream.framework */,
 				DB34CDE5207B9EBD005F8E8C /* Foundation.framework */,
 			);
 			name = Frameworks;

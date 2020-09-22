@@ -1,5 +1,10 @@
-import PusherSwift
 import XCTest
+
+#if WITH_ENCRYPTION
+    @testable import PusherSwiftWithEncryption
+#else
+    @testable import PusherSwift
+#endif
 
 class AuthenticationTests: XCTestCase {
     class DummyDelegate: PusherDelegate {
@@ -20,7 +25,8 @@ class AuthenticationTests: XCTestCase {
         super.setUp()
 
         let options = PusherClientOptions(
-            authMethod: AuthMethod.endpoint(authEndpoint: "http://localhost:9292/pusher/auth")
+            authMethod: AuthMethod.endpoint(authEndpoint: "http://localhost:9292/pusher/auth"),
+            autoReconnect: false
         )
         pusher = Pusher(key: "testKey123", options: options)
         socket = MockWebSocket()
@@ -76,7 +82,8 @@ class AuthenticationTests: XCTestCase {
 
     func testSubscribingToAPrivateChannelShouldCreateAuthSignatureInternally() {
         let options = PusherClientOptions(
-            authMethod: .inline(secret: "secret")
+            authMethod: .inline(secret: "secret"),
+            autoReconnect: false
         )
         pusher = Pusher(key: "key", options: options)
         socket.delegate = pusher.connection
@@ -84,12 +91,21 @@ class AuthenticationTests: XCTestCase {
 
         let chan = pusher.subscribe("private-test-channel")
         XCTAssertFalse(chan.subscribed, "the channel should not be subscribed")
+
+        let ex = expectation(description: "subscription succeed")
+        chan.bind(eventName: "pusher:subscription_succeeded") { (_: PusherEvent) in
+            ex.fulfill()
+            XCTAssertTrue(chan.subscribed, "the channel should be subscribed")
+        }
         pusher.connect()
-        XCTAssertTrue(chan.subscribed, "the channel should be subscribed")
+        waitForExpectations(timeout: 0.5)
     }
 
     func testSubscribingToAPrivateChannelShouldFailIfNoAuthMethodIsProvided() {
-        pusher = Pusher(key: "key")
+        let options = PusherClientOptions(
+            autoReconnect: false
+        )
+        pusher = Pusher(key: "key", options: options)
         socket.delegate = pusher.connection
         pusher.connection.socket = socket
 
@@ -113,6 +129,7 @@ class AuthenticationTests: XCTestCase {
 
         let _ = pusher.bind({ (data: Any?) -> Void in
             if let data = data as? [String: AnyObject], let eventName = data["event"] as? String, eventName == "pusher:subscription_error" {
+                XCTAssertEqual("private-test-channel", data["channel"] as? String)
                 XCTAssertTrue(Thread.isMainThread)
                 ex.fulfill()
             }
@@ -143,7 +160,8 @@ class AuthenticationTests: XCTestCase {
         dummyDelegate.testingChannelName = channelName
 
         let options = PusherClientOptions(
-            authMethod: AuthMethod.authRequestBuilder(authRequestBuilder: AuthRequestBuilder())
+            authMethod: AuthMethod.authRequestBuilder(authRequestBuilder: AuthRequestBuilder()),
+            autoReconnect: false
         )
         pusher = Pusher(key: "testKey123", options: options)
         pusher.delegate = dummyDelegate
@@ -216,7 +234,8 @@ class AuthenticationTests: XCTestCase {
         dummyDelegate.testingChannelName = channelName
 
         let options = PusherClientOptions(
-            authMethod: AuthMethod.authorizer(authorizer: SomeAuthorizer())
+            authMethod: AuthMethod.authorizer(authorizer: SomeAuthorizer()),
+            autoReconnect: false
         )
         pusher = Pusher(key: "testKey123", options: options)
         pusher.delegate = dummyDelegate
@@ -249,7 +268,8 @@ class AuthenticationTests: XCTestCase {
         dummyDelegate.testingChannelName = channelName
 
         let options = PusherClientOptions(
-            authMethod: AuthMethod.authorizer(authorizer: SomeAuthorizer())
+            authMethod: AuthMethod.authorizer(authorizer: SomeAuthorizer()),
+            autoReconnect: false
         )
         pusher = Pusher(key: "testKey123", options: options)
         pusher.delegate = dummyDelegate

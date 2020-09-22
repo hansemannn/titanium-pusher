@@ -1,9 +1,17 @@
 {
-  "commitish" : "6.1.0",
+  "commitish" : "8.0.0",
   "iOS" : [
     {
+      "hash" : "bff587328292907b052f939b6521dc03df75f6cff034a310849264acf5bf8f5b",
       "name" : "PusherSwift",
-      "hash" : "14672496259353635ae4ab752663119a100838e4d86a1bac34cfc47c634d214b"
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)"
+    },
+    {
+      "hash" : "53fe561d8853795e1972a665f87e255ed78f9e9759a1ba1c0d0873bd5ffbef5d",
+      "name" : "PusherSwiftWithEncryption",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)"
     }
   ]
 }

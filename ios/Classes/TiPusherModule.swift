@@ -6,7 +6,6 @@
 //  Copyright (c) 2019-present Lambus GmbH. All rights reserved.
 //
 
-import UIKit
 import TitaniumKit
 import PusherSwift
 
@@ -23,25 +22,24 @@ class TiPusherModule: TiModule {
     return "ti.pusher"
   }
 
-  override func startup() {
-    super.startup()
-    debugPrint("[DEBUG] \(self) loaded")
-  }
-
   @objc(initialize:)
   func initialize(arguments: Array<Any>?) {
     guard let arguments = arguments, let params = arguments[0] as? [String: Any] else { return }
     guard let key = params["key"] as? String else { return }
     
     let options = PusherClientOptions(
-      host: .cluster("eu")
+      host: .cluster("eu"),
+      useTLS: true
     )
     
     if let proxyOptions = params["options"] as? [String: Any] {
       if let authEndpoint = proxyOptions["authEndpoint"] as? String,
          let accessToken = proxyOptions["accessToken"] as?  String {
+        let headers = proxyOptions["headers"] as? [String: String]
+
         options.authMethod = AuthMethod.authRequestBuilder(authRequestBuilder: TiAuthRequestBuilder(authURL: authEndpoint,
-                                                                                                  accessToken: accessToken))
+                                                                                                    accessToken: accessToken,
+                                                                                                    headers: headers))
       }
     }
     
@@ -49,6 +47,7 @@ class TiPusherModule: TiModule {
       key: key,
       options: options
     )
+
     pusher?.delegate = self
   }
   
@@ -89,10 +88,12 @@ extension TiPusherModule: PusherDelegate {
 class TiAuthRequestBuilder: AuthRequestBuilderProtocol {
   let authURL: String
   let accessToken: String
+  let headers: [String: String]?
   
-  init(authURL: String, accessToken: String) {
+  init(authURL: String, accessToken: String, headers: [String: String]?) {
     self.authURL = authURL
     self.accessToken = accessToken
+    self.headers = headers
   }
   
   func requestFor(socketID: String, channelName: String) -> URLRequest? {
@@ -100,6 +101,14 @@ class TiAuthRequestBuilder: AuthRequestBuilderProtocol {
     request.httpMethod = "POST"
     request.httpBody = "socket_id=\(socketID)&channel_name=\(channelName)".data(using: String.Encoding.utf8)
     request.setValue(accessToken, forHTTPHeaderField: "Authorization")
+
+    // Apply custom headers if present
+    if let headers = headers {
+      for key in headers.keys {
+        request.setValue(headers[key], forHTTPHeaderField: key)
+      }
+    }
+
     return request
   }
 }

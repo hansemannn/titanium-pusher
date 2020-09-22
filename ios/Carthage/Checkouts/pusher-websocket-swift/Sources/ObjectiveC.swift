@@ -1,11 +1,11 @@
 import Foundation
 
 @objc public extension Pusher {
-    public func subscribe(channelName: String) -> PusherChannel {
+    func subscribe(channelName: String) -> PusherChannel {
         return self.subscribe(channelName, onMemberAdded: nil, onMemberRemoved: nil)
     }
 
-    public func subscribe(
+    func subscribe(
         channelName: String,
         onMemberAdded: ((PusherPresenceChannelMember) -> ())? = nil,
         onMemberRemoved: ((PusherPresenceChannelMember) -> ())? = nil
@@ -13,11 +13,11 @@ import Foundation
         return self.subscribe(channelName, auth: nil, onMemberAdded: onMemberAdded, onMemberRemoved: onMemberRemoved)
     }
 
-    public func subscribeToPresenceChannel(channelName: String) -> PusherPresenceChannel {
+    func subscribeToPresenceChannel(channelName: String) -> PusherPresenceChannel {
         return self.subscribeToPresenceChannel(channelName: channelName, auth: nil, onMemberAdded: nil, onMemberRemoved: nil)
     }
 
-    public func subscribeToPresenceChannel(
+    func subscribeToPresenceChannel(
         channelName: String,
         onMemberAdded: ((PusherPresenceChannelMember) -> ())? = nil,
         onMemberRemoved: ((PusherPresenceChannelMember) -> ())? = nil
@@ -25,17 +25,17 @@ import Foundation
         return self.subscribeToPresenceChannel(channelName: channelName, auth: nil, onMemberAdded: onMemberAdded, onMemberRemoved: onMemberRemoved)
     }
 
-    public convenience init(withAppKey key: String, options: PusherClientOptions) {
+    convenience init(withAppKey key: String, options: PusherClientOptions) {
         self.init(key: key, options: options)
     }
 
-    public convenience init(withKey key: String) {
+    convenience init(withKey key: String) {
         self.init(key: key)
     }
 }
 
 @objc public extension PusherConnection {
-    public var OCReconnectAttemptsMax: NSNumber? {
+    var OCReconnectAttemptsMax: NSNumber? {
         get {
             return reconnectAttemptsMax as NSNumber?
         }
@@ -44,7 +44,7 @@ import Foundation
         }
     }
 
-    public var OCMaxReconnectGapInSeconds: NSNumber? {
+    var OCMaxReconnectGapInSeconds: NSNumber? {
         get {
             return maxReconnectGapInSeconds as NSNumber?
         }
@@ -55,13 +55,34 @@ import Foundation
 }
 
 @objc public extension PusherClientOptions {
-    public convenience init(
+
+    // initializer without legacy "attemptToReturnJSONObject"
+    convenience init(
+        ocAuthMethod authMethod: OCAuthMethod,
+        autoReconnect: Bool = true,
+        ocHost host: OCPusherHost = PusherHost.host("ws.pusherapp.com").toObjc(),
+        port: NSNumber? = nil,
+        useTLS: Bool = true,
+        activityTimeout: NSNumber? = nil
+    ) {
+        self.init(
+            ocAuthMethod: authMethod,
+            attemptToReturnJSONObject: true,
+            autoReconnect: autoReconnect,
+            ocHost: host,
+            port: port,
+            useTLS: useTLS,
+            activityTimeout: activityTimeout
+        )
+    }
+
+    convenience init(
         ocAuthMethod authMethod: OCAuthMethod,
         attemptToReturnJSONObject: Bool = true,
         autoReconnect: Bool = true,
         ocHost host: OCPusherHost = PusherHost.host("ws.pusherapp.com").toObjc(),
         port: NSNumber? = nil,
-        encrypted: Bool = true,
+        useTLS: Bool = true,
         activityTimeout: NSNumber? = nil
     ) {
         self.init(
@@ -70,16 +91,16 @@ import Foundation
             autoReconnect: autoReconnect,
             host: PusherHost.fromObjc(source: host),
             port: port as? Int,
-            encrypted: encrypted,
+            useTLS: useTLS,
             activityTimeout: activityTimeout as? TimeInterval
         )
     }
 
-    public convenience init(authMethod: OCAuthMethod) {
+    convenience init(authMethod: OCAuthMethod) {
         self.init(authMethod: AuthMethod.fromObjc(source: authMethod))
     }
 
-    public func setAuthMethod(authMethod: OCAuthMethod) {
+    func setAuthMethod(authMethod: OCAuthMethod) {
         self.authMethod = AuthMethod.fromObjc(source: authMethod)
     }
 }
@@ -183,5 +204,16 @@ public extension AuthMethod {
     public init(authorizer: Authorizer) {
         self.type = 3
         self.authorizer = authorizer
+    }
+}
+
+public extension PusherError {
+    /// The error code as an NSNumber (for Objective-C compatibility).
+    var codeOC: NSNumber? {
+        if let code = code {
+            return NSNumber(value: code)
+        } else {
+            return nil
+        }
     }
 }

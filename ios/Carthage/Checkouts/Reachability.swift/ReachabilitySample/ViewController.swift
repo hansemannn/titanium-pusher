@@ -36,10 +36,10 @@ class ViewController: UIViewController {
     func setupReachability(_ hostName: String?, useClosures: Bool) {
         let reachability: Reachability?
         if let hostName = hostName {
-            reachability = Reachability(hostname: hostName)
+            reachability = try? Reachability(hostname: hostName)
             hostNameLabel.text = hostName
         } else {
-            reachability = Reachability()
+            reachability = try? Reachability()
             hostNameLabel.text = "No host name"
         }
         self.reachability = reachability
@@ -102,7 +102,7 @@ class ViewController: UIViewController {
     @objc func reachabilityChanged(_ note: Notification) {
         let reachability = note.object as! Reachability
         
-        if reachability.connection != .none {
+        if reachability.connection != .unavailable {
             updateLabelColourWhenReachable(reachability)
         } else {
             updateLabelColourWhenNotReachable(reachability)

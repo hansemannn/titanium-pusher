@@ -1,0 +1,4 @@
+framework module PusherSwiftWithEncryption {
+  header "PusherSwiftWithEncryption-Swift.h"
+  requires objc
+}
