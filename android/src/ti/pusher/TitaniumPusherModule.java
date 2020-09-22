@@ -49,15 +49,24 @@ public class TitaniumPusherModule extends KrollModule
         PusherOptions options = new PusherOptions();
 
 		if (proxyOptions != null) {
-            String authEndpoint = proxyOptions.getString("authEndpoint");
-            String accessToken = proxyOptions.getString("accessToken");
-            HashMap<String, String> headers = new HashMap<>();
-            headers.put("Authorization",  accessToken);
+			String authEndpoint = proxyOptions.getString("authEndpoint");
+			String accessToken = proxyOptions.getString("accessToken");
+			KrollDict headers = proxyOptions.getKrollDict("headers");
 
-            HttpAuthorizer authorizer = new HttpAuthorizer(authEndpoint);
-            authorizer.setHeaders(headers);
-            options.setAuthorizer(authorizer);
-        }
+			HashMap<String, String> nativeHeaders = new HashMap<>();
+			nativeHeaders.put("Authorization",  accessToken);
+
+			// Apply additional headers
+			if (headers != null) {
+				for (String headerKey : headers.keySet()) {
+					nativeHeaders.put(headerKey, headers.getString(headerKey));
+				}
+			}
+
+			HttpAuthorizer authorizer = new HttpAuthorizer(authEndpoint);
+			authorizer.setHeaders(nativeHeaders);
+			options.setAuthorizer(authorizer);
+		}
 
 		options.setCluster("eu");
 		pusher = new Pusher(key, options);
