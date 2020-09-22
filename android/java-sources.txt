@@ -1,5 +1,7 @@
 "/Users/hans/Documents/dev/titanium/titanium-pusher/android/src/ti/pusher/TiPusherChannelProxy.java"
 "/Users/hans/Documents/dev/titanium/titanium-pusher/android/src/ti/pusher/TitaniumPusherModule.java"
+"/Users/hans/Documents/dev/titanium/titanium-pusher/android/build/generated/java/ti/pusher/CommonJsSourceProvider.java"
+"/Users/hans/Documents/dev/titanium/titanium-pusher/android/build/generated/java/ti/pusher/TitaniumPusherBootstrap.java"
 "/Users/hans/Documents/dev/titanium/titanium-pusher/android/build/generated/r/android/support/compat/R.java"
 "/Users/hans/Documents/dev/titanium/titanium-pusher/android/build/generated/r/android/support/coreui/R.java"
 "/Users/hans/Documents/dev/titanium/titanium-pusher/android/build/generated/r/android/support/coreutils/R.java"
