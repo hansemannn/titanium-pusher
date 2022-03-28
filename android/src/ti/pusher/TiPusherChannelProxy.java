@@ -17,6 +17,7 @@ import org.json.JSONObject;
 
 import com.pusher.client.channel.PrivateChannel;
 import com.pusher.client.channel.PrivateChannelEventListener;
+import com.pusher.client.channel.PusherEvent;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,21 +36,27 @@ public class TiPusherChannelProxy extends KrollProxy
 	@Kroll.method
 	public void bind(String eventName) {
 		channel.bind(eventName, new PrivateChannelEventListener() {
-            @Override
-            public void onSubscriptionSucceeded(String s) {
-                Log.d(LCAT, "Subscription succeeded from channel!");
+			@Override
+			public void onEvent(PusherEvent event) {
+				KrollDict dict = new KrollDict();
+				dict.put("rawData", event.getData());
+				fireEvent("data", dict);
+			}
+
+			@Override
+			public void onError(String message, Exception e) {
+				PrivateChannelEventListener.super.onError(message, e);
+				Log.e(LCAT, "General Error:" + e);
+			}
+
+			@Override
+            public void onSubscriptionSucceeded(String channelName) {
+                Log.d(LCAT, "Subscription succeeded from channel: " + channelName);
             }
 
             @Override
             public void onAuthenticationFailure(String s, Exception e) {
-				Log.e(LCAT, "Authentication failure: " + s);
-            }
-
-            @Override
-            public void onEvent(String channelName, String eventName, final String data) {
-                KrollDict dict = new KrollDict();
-                dict.put("rawData", data);
-                fireEvent("data", dict);
+				Log.e(LCAT, "Authentication failure: " + e);
             }
         });
 	}
