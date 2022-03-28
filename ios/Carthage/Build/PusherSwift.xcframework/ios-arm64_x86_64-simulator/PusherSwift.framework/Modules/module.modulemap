@@ -1,0 +1,11 @@
+framework module PusherSwift {
+  umbrella header "PusherSwift.h"
+
+  export *
+  module * { export * }
+}
+
+module PusherSwift.Swift {
+    header "PusherSwift-Swift.h"
+    requires objc
+}

@@ -4,28 +4,29 @@ import PackageDescription
 
 let package = Package(
     name: "PusherSwift",
+    platforms: [.iOS("13.0"), .macOS("10.15"), .tvOS("13.0"), .watchOS("6.0")],
     products: [
         .library(name: "PusherSwift", targets: ["PusherSwift"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ashleymills/Reachability.swift.git", .upToNextMajor(from: "5.0.0")),
-        .package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMajor(from: "3.1.0")),
+        .package(url: "https://github.com/pusher/NWWebSocket.git", .upToNextMajor(from: "0.5.2")),
+        .package(url: "https://github.com/bitmark-inc/tweetnacl-swiftwrap", .upToNextMajor(from: "1.0.0")),
+        // Source code linting
+        .package(url: "https://github.com/realm/SwiftLint", .upToNextMajor(from: "0.43.1"))
     ],
     targets: [
         .target(
             name: "PusherSwift",
             dependencies: [
-                "Reachability",
-                "Starscream",
+                "NWWebSocket",
+                "TweetNacl",
             ],
-            path: "Sources",
-            exclude: ["PusherSwiftWithEncryption-Only"]
+            path: "Sources"
         ),
         .testTarget(
             name: "PusherSwiftTests",
             dependencies: ["PusherSwift"],
-            path: "Tests",
-            exclude: ["PusherSwiftWithEncryption-Only"]
+            path: "Tests"
         )
     ],
     swiftLanguageVersions: [.v5]

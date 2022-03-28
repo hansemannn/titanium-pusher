@@ -1,0 +1,19 @@
+{
+  "commitish" : "1.1.0",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)",
+      "hash" : "e8341e2897eaad43acfe6c480a9fe10fdaf77c315d19e98ee5b7fe864a0a92dc",
+      "name" : "TweetNacl",
+      "container" : "TweetNacl.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    },
+    {
+      "swiftToolchainVersion" : "5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)",
+      "hash" : "bd252ed2d1fcb08e2404bcdafd9d1f51864ed63398295480d23f9c00fd0edb6c",
+      "name" : "TweetNacl",
+      "container" : "TweetNacl.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    }
+  ]
+}

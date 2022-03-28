@@ -4,7 +4,97 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/pusher/pusher-websocket-swift/compare/8.0.0...HEAD)
+## [Unreleased](https://github.com/pusher/pusher-websocket-swift/compare/10.0.1...HEAD) - 2022-03-23
+
+## [10.0.1](https://github.com/pusher/pusher-websocket-swift/compare/10.0.0...10.0.1) - 2022-03-23
+
+### Fixed
+
+- Prevent reconnection after intentional disconnection
+
+## [10.0.0](https://github.com/pusher/pusher-websocket-swift/compare/9.2.2...10.0.0) - 2021-07-08
+
+### Added
+
+- The library now supports watchOS 6.0 and above.
+- [Auto-generated API docs.](https://pusher.github.io/pusher-websocket-swift/)
+
+### Removed
+
+- The deprecated `bind(_ callback:)` method on `Pusher` has been removed.
+- The deprecated `bind(eventName:callback:)` method on `PusherChannel` has been removed.
+
+## [9.2.2](https://github.com/pusher/pusher-websocket-swift/compare/9.2.1...9.2.2) - 2021-03-11
+
+### Fixed
+
+- Resolved an issue preventing App Store submission when integrating the SDK using certain dependency managers.
+
+## [9.2.1](https://github.com/pusher/pusher-websocket-swift/compare/9.2.0...9.2.1) - 2021-03-04
+
+### Deprecated
+
+- Marked the legacy `bind(_ callback:)` method on `Pusher` as deprecated.
+- Marked the legacy `bind(eventName:callback:)` method on `PusherChannel` as deprecated.
+
+## [9.2.0](https://github.com/pusher/pusher-websocket-swift/compare/9.1.1...9.2.0) - 2021-01-15
+
+### Added
+
+- Added an optional `path` parameter to `PusherClientOptions` to specify custom additional path components.
+
+### Changed
+
+- All debugging messages are now sent via `debugLog(message: String)` (previously there were some messages which weren't sent this way).
+
+### Fixed
+
+- The `subscribed` parameter on a `PusherChannel` is now set to `false` when calling `unsubscribe(_ channelName: String)`.
+- Enhanced thread safety for common operations: subscribing / unsubscribing with channels, and binding / unbinding with events.
+
+## [9.1.1](https://github.com/pusher/pusher-websocket-swift/compare/9.1.0...9.1.1) - 2020-12-15
+
+### Fixed
+
+- Resolved a race condition that could prevent automatic reconnection attempts in certain circumstances.
+
+## [9.1.0](https://github.com/pusher/pusher-websocket-swift/compare/9.0.0...9.1.0) - 2020-12-07
+
+### Added
+
+- Encrypted channels are now support by default by the `PusherSwift` target.
+- Encrypted channels are now supported if integrating the SDK via Swift Package Manager.
+- tvOS as a target platform is now supported regardless of if encrypted channels are used.
+- [tweetnacl-swiftwrap](https://github.com/bitmark-inc/tweetnacl-swiftwrap) is now a dependency.
+
+### Changed
+
+- Migrated the WebSocket client code to use our [NWWebSocket](https://github.com/pusher/NWWebSocket) library.
+- Improvements to WebSocket reconnection functionality for unstable connections, or connections which migrate from Wi-Fi to Cellular (or vice versa).
+
+### Removed
+
+- The `PusherSwiftWithEncryption` target has been removed.
+- Reachability is no longer a dependency.
+
+## [9.0.0](https://github.com/pusher/pusher-websocket-swift/compare/8.0.0...9.0.0) - 2020-10-09
+
+### Added
+
+- Connects to Pusher servers using a WebSocket client that is fully-native code.
+- [Pusher Channels Protocol closure codes](https://pusher.com/docs/channels/library_auth_reference/pusher-websockets-protocol#connection-closure) are now respected when attempting to reconnect to Pusher servers after a disconnection.
+
+### Changed
+
+- The `autoReconnect` option is now ignored if a received closure code is from the Channels Protocol closure code range.
+- The SDK minimum deployment targets are now: iOS 13.0, macOS 10.15 and tvOS 13.0.
+- Fixed some typos in the README.
+- Removed BETA label for Private encrypted channels feature in the README.
+- Clarified in the README which frameworks to import in your project if you are integrating the SDK using Carthage.
+
+### Removed
+
+- Starscream is no longer a dependency.
 
 ## [8.0.0](https://github.com/pusher/pusher-websocket-swift/compare/7.2.0...8.0.0) - 2020-04-27
 
@@ -35,7 +125,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Added new `bind` functions which accept a callback that receives a `PusherEvent`. A `PusherEvent` represents an event received from the websocket and has properties containing the event name, channel name and data. In addition, `PusherEvent` has a new property, `userId`, which allows you to verify the ID of the user who triggered a client event on a presence channel. You can read more about this feature in [the docs](https://pusher.com/docs/channels/using_channels/events#user-id-in-client-events). All the old `bind` functions are still available for backwards compatibility. The `data` property of `PusherEvent` is not automatically parsed from JSON and you can decide to parse that as required. The parsing behaviour is unchanged for data passed to callbacks bound by the old `bind` functions.
+- Added new `bind` functions which accept a callback that receives a `PusherEvent`. A `PusherEvent` represents an event received from the websocket and has properties containing the event name, channel name and data. In addition, `PusherEvent` has a new property, `userId`, which allows you to verify the ID of the user who triggered a client event on a presence channel. You can read more about this feature in [the docs](https://pusher.com/docs/channels/using_channels/events#user-id-in-client-events). All the old `bind` functions are still available for backwards compatibility. The `data` property of `PusherEvent` is not automatically parsed from JSON and you can decide to parse that as required. The parsing behavior is unchanged for data passed to callbacks bound by the old `bind` functions.
 
 ### Changed
 

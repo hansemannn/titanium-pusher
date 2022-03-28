@@ -1,8 +1,9 @@
 import Foundation
-import Starscream
+import NWWebSocket
 
 let PROTOCOL = 7
-let VERSION = "8.0.0"
+let VERSION = "10.0.1"
+// swiftlint:disable:next identifier_name
 let CLIENT_NAME = "pusher-websocket-swift"
 
 @objcMembers
@@ -25,8 +26,10 @@ let CLIENT_NAME = "pusher-websocket-swift"
     */
     public init(key: String, options: PusherClientOptions = PusherClientOptions()) {
         self.key = key
-        let urlString = constructUrl(key: key, options: options)
-        let ws = WebSocket(url: URL(string: urlString)!)
+        let urlString = URL.channelsSocketUrl(key: key, options: options)
+        let wsOptions = NWWebSocket.defaultOptions
+        wsOptions.setSubprotocols(["pusher-channels-protocol-\(PROTOCOL)"])
+        let ws = NWWebSocket(url: URL(string: urlString)!, options: wsOptions)
         connection = PusherConnection(key: key, socket: ws, url: urlString, options: options)
         connection.createGlobalChannel()
     }
@@ -47,31 +50,14 @@ let CLIENT_NAME = "pusher-websocket-swift"
     open func subscribe(
         _ channelName: String,
         auth: PusherAuth? = nil,
-        onMemberAdded: ((PusherPresenceChannelMember) -> ())? = nil,
-        onMemberRemoved: ((PusherPresenceChannelMember) -> ())? = nil
+        onMemberAdded: ((PusherPresenceChannelMember) -> Void)? = nil,
+        onMemberRemoved: ((PusherPresenceChannelMember) -> Void)? = nil
     ) -> PusherChannel {
 
-        let isEncryptedChannel = PusherEncryptionHelpers.isEncryptedChannel(channelName: channelName)
-
-        if isEncryptedChannel && !PusherDecryptor.isDecryptionAvailable(){
-            let error = """
-
-            WARNING: You are subscribing to an encrypted channel: '\(channelName)' but this version of PusherSwift does not \
-            support end-to-end encryption. Events will not be decrypted. You must import 'PusherSwiftWithEncryption' in \
-            order for events to be decrypted. See https://github.com/pusher/pusher-websocket-swift for more information
-
-            """
-            print(error)
-        }
+        let isEncryptedChannel = PusherChannel.isEncrypted(name: channelName)
 
         if isEncryptedChannel && auth != nil {
-            let error = """
-
-            WARNING: Passing an auth value to 'subscribe' is not supported for encrypted channels. Event decryption will \
-            fail. You must use one of the following auth methods: 'endpoint', 'authRequestBuilder', 'authorizer'
-
-            """
-            print(error)
+            Logger.shared.warning(for: .authValueOnSubscriptionNotSupported)
         }
 
         return self.connection.subscribe(
@@ -100,8 +86,8 @@ let CLIENT_NAME = "pusher-websocket-swift"
     open func subscribeToPresenceChannel(
         channelName: String,
         auth: PusherAuth? = nil,
-        onMemberAdded: ((PusherPresenceChannelMember) -> ())? = nil,
-        onMemberRemoved: ((PusherPresenceChannelMember) -> ())? = nil
+        onMemberAdded: ((PusherPresenceChannelMember) -> Void)? = nil,
+        onMemberRemoved: ((PusherPresenceChannelMember) -> Void)? = nil
     ) -> PusherPresenceChannel {
         return self.connection.subscribeToPresenceChannel(
             channelName: channelName,
@@ -125,18 +111,6 @@ let CLIENT_NAME = "pusher-websocket-swift"
     */
     open func unsubscribeAll() {
         self.connection.unsubscribeAll()
-    }
-
-    /**
-        Binds the client's global channel to all events
-
-        - parameter callback: The function to call when a new event is received. The callback
-                              receives the event's data payload
-
-        - returns: A unique string that can be used to unbind the callback from the client
-    */
-    @discardableResult open func bind(_ callback: @escaping (Any?) -> Void) -> String {
-        return self.connection.addLegacyCallbackToGlobalChannel(callback)
     }
 
     /**
@@ -182,23 +156,4 @@ let CLIENT_NAME = "pusher-websocket-swift"
     open func connect() {
         self.connection.connect()
     }
-}
-
-/**
-    Creates a valid URL that can be used in a connection attempt
-
-    - parameter key:     The app key to be inserted into the URL
-    - parameter options: The collection of options needed to correctly construct the URL
-
-    - returns: The constructed URL ready to use in a connection attempt
-*/
-func constructUrl(key: String, options: PusherClientOptions) -> String {
-    var url = ""
-
-    if options.useTLS {
-        url = "wss://\(options.host):\(options.port)/app/\(key)"
-    } else {
-        url = "ws://\(options.host):\(options.port)/app/\(key)"
-    }
-    return "\(url)?client=\(CLIENT_NAME)&version=\(VERSION)&protocol=\(PROTOCOL)"
 }

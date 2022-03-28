@@ -1,0 +1,11 @@
+framework module TweetNacl {
+  umbrella header "TweetNacl.h"
+
+  export *
+  module * { export * }
+}
+
+module TweetNacl.Swift {
+    header "TweetNacl-Swift.h"
+    requires objc
+}

@@ -1,0 +1,19 @@
+{
+  "commitish" : "0.5.2",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)",
+      "hash" : "1cda6ec54e214dd772bdf629d59b6e8b88becf244265097fe196db6a0b55aa6e",
+      "name" : "NWWebSocket",
+      "container" : "NWWebSocket.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)",
+      "hash" : "c36412c142572e8d94385560182f78d74fe18162e09ca9760361b72199c00788",
+      "name" : "NWWebSocket",
+      "container" : "NWWebSocket.xcframework",
+      "identifier" : "ios-arm64"
+    }
+  ]
+}

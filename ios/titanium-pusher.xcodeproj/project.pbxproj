@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A398021251A2A6800A9DE51 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A39801E251A2A6800A9DE51 /* Starscream.framework */; };
-		3A398022251A2A6800A9DE51 /* PusherSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A39801F251A2A6800A9DE51 /* PusherSwift.framework */; };
-		3A398023251A2A6800A9DE51 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A398020251A2A6800A9DE51 /* Reachability.framework */; };
+		3AB01BC627F1F78C0029181F /* TweetNacl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB01BC327F1F78C0029181F /* TweetNacl.xcframework */; };
+		3AB01BC727F1F78C0029181F /* NWWebSocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB01BC427F1F78C0029181F /* NWWebSocket.xcframework */; };
+		3AB01BC827F1F78C0029181F /* PusherSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB01BC527F1F78C0029181F /* PusherSwift.xcframework */; };
 		DB24E03C20766AC90033B2B1 /* TiPusherChannelProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24E03B20766AC90033B2B1 /* TiPusherChannelProxy.swift */; };
 		DB34CDE0207B998A005F8E8C /* TiPusherModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34CDDE207B998A005F8E8C /* TiPusherModuleAssets.m */; };
 		DB34CDE1207B998A005F8E8C /* TiPusherModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34CDDF207B998A005F8E8C /* TiPusherModuleAssets.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,12 +18,13 @@
 		DB52E2431E9CD0F800AAAEE0 /* TiPusherModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB52E2421E9CD0F800AAAEE0 /* TiPusherModule.swift */; };
 		DB75E5161E9CD59000809B2D /* TiPusher.h in Headers */ = {isa = PBXBuildFile; fileRef = DB75E5151E9CD58100809B2D /* TiPusher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBB66221208481A800EAD6D9 /* TitaniumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB6621E2084819D00EAD6D9 /* TitaniumKit.framework */; };
+		000000000000000000000002 /* TitaniumKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000000000000000000001 /* TitaniumKit.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A39801E251A2A6800A9DE51 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = platform/Starscream.framework; sourceTree = "<group>"; };
-		3A39801F251A2A6800A9DE51 /* PusherSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PusherSwift.framework; path = platform/PusherSwift.framework; sourceTree = "<group>"; };
-		3A398020251A2A6800A9DE51 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = platform/Reachability.framework; sourceTree = "<group>"; };
+		3AB01BC327F1F78C0029181F /* TweetNacl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TweetNacl.xcframework; path = platform/TweetNacl.xcframework; sourceTree = "<group>"; };
+		3AB01BC427F1F78C0029181F /* NWWebSocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NWWebSocket.xcframework; path = platform/NWWebSocket.xcframework; sourceTree = "<group>"; };
+		3AB01BC527F1F78C0029181F /* PusherSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PusherSwift.xcframework; path = platform/PusherSwift.xcframework; sourceTree = "<group>"; };
 		DB24E03B20766AC90033B2B1 /* TiPusherChannelProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiPusherChannelProxy.swift; path = Classes/TiPusherChannelProxy.swift; sourceTree = "<group>"; };
 		DB34CDDE207B998A005F8E8C /* TiPusherModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPusherModuleAssets.m; path = Classes/TiPusherModuleAssets.m; sourceTree = SOURCE_ROOT; };
 		DB34CDDF207B998A005F8E8C /* TiPusherModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPusherModuleAssets.h; path = Classes/TiPusherModuleAssets.h; sourceTree = SOURCE_ROOT; };
@@ -34,6 +35,7 @@
 		DB52E2411E9CD09900AAAEE0 /* titanium.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
 		DB52E2421E9CD0F800AAAEE0 /* TiPusherModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiPusherModule.swift; path = Classes/TiPusherModule.swift; sourceTree = "<group>"; };
 		DB75E5151E9CD58100809B2D /* TiPusher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TiPusher.h; path = Classes/TiPusher.h; sourceTree = "<group>"; };
+		000000000000000000000001 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "TitaniumKit.xcframework"; path = "$(TITANIUM_SDK)/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,11 +43,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB01BC627F1F78C0029181F /* TweetNacl.xcframework in Frameworks */,
 				DBB66221208481A800EAD6D9 /* TitaniumKit.framework in Frameworks */,
-				3A398022251A2A6800A9DE51 /* PusherSwift.framework in Frameworks */,
-				3A398023251A2A6800A9DE51 /* Reachability.framework in Frameworks */,
-				3A398021251A2A6800A9DE51 /* Starscream.framework in Frameworks */,
+				3AB01BC727F1F78C0029181F /* NWWebSocket.xcframework in Frameworks */,
 				DB34CDE6207B9EBD005F8E8C /* Foundation.framework in Frameworks */,
+				3AB01BC827F1F78C0029181F /* PusherSwift.xcframework in Frameworks */,
+				000000000000000000000002 /* TitaniumKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,10 +88,11 @@
 		DB34CDE2207B9D6A005F8E8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A39801F251A2A6800A9DE51 /* PusherSwift.framework */,
-				3A398020251A2A6800A9DE51 /* Reachability.framework */,
-				3A39801E251A2A6800A9DE51 /* Starscream.framework */,
+				3AB01BC427F1F78C0029181F /* NWWebSocket.xcframework */,
+				3AB01BC527F1F78C0029181F /* PusherSwift.xcframework */,
+				3AB01BC327F1F78C0029181F /* TweetNacl.xcframework */,
 				DB34CDE5207B9EBD005F8E8C /* Foundation.framework */,
+				000000000000000000000001 /* TitaniumKit.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,7 +165,7 @@
 		DB52E2211E9CCD7000AAAEE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					DB52E2291E9CCD7000AAAEE0 = {
 						CreatedOnToolsVersion = 8.3;
@@ -255,6 +259,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -282,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -322,6 +327,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -343,10 +349,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -378,8 +385,12 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = (
 					"-DDEBUG",
@@ -421,8 +432,12 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = (
