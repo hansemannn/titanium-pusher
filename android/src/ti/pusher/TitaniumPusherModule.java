@@ -20,6 +20,7 @@ import com.pusher.client.channel.PrivateChannel;
 import com.pusher.client.connection.ConnectionEventListener;
 import com.pusher.client.connection.ConnectionStateChange;
 import com.pusher.client.util.HttpAuthorizer;
+import com.pusher.client.util.HttpChannelAuthorizer;
 
 import java.util.HashMap;
 
@@ -29,7 +30,6 @@ public class TitaniumPusherModule extends KrollModule
 	// Standard Debugging variables
 
 	private static final String LCAT = "TitaniumPusherModule";
-	private static final boolean DBG = TiConfig.LOGD;
 
 	private Pusher pusher;
 
@@ -52,9 +52,9 @@ public class TitaniumPusherModule extends KrollModule
 			String authEndpoint = proxyOptions.getString("authEndpoint");
 			String accessToken = proxyOptions.getString("accessToken");
 			KrollDict headers = proxyOptions.getKrollDict("headers");
+			String cluster = proxyOptions.getString("cluster");
 
 			HashMap<String, String> nativeHeaders = new HashMap<>();
-			nativeHeaders.put("Authorization",  accessToken);
 
 			// Apply additional headers
 			if (headers != null) {
@@ -63,12 +63,21 @@ public class TitaniumPusherModule extends KrollModule
 				}
 			}
 
-			HttpAuthorizer authorizer = new HttpAuthorizer(authEndpoint);
-			authorizer.setHeaders(nativeHeaders);
-			options.setAuthorizer(authorizer);
+			// Set cluster region
+			if (cluster != null) {
+				options.setCluster(cluster);
+			}
+
+			// Add authorization
+			if (authEndpoint != null && accessToken != null) {
+				nativeHeaders.put("Authorization",  accessToken);
+
+				HttpChannelAuthorizer authorizer = new HttpChannelAuthorizer(authEndpoint);
+				authorizer.setHeaders(nativeHeaders);
+				options.setChannelAuthorizer(authorizer);
+			}
 		}
 
-		options.setCluster("eu");
 		pusher = new Pusher(key, options);
 	}
 

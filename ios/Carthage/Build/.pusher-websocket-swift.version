@@ -1,16 +1,16 @@
 {
-  "commitish" : "10.0.1",
+  "commitish" : "10.1.1",
   "iOS" : [
     {
-      "swiftToolchainVersion" : "5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)",
-      "hash" : "af0f3deb0a79cd8abfa379f862508eb67b132bb7428cc193a064f9f59e5e5b68",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "46194ec752f304f2d901e54bf26fc333475f7859f8f47bb4f80df97cc371ae98",
       "name" : "PusherSwift",
       "container" : "PusherSwift.xcframework",
       "identifier" : "ios-arm64_x86_64-simulator"
     },
     {
-      "swiftToolchainVersion" : "5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)",
-      "hash" : "e5b3a0424065630b1aea319a29b658ff709918a7825d0c6043839d8f9f6888d6",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "757b0e56d94f22453beb054eb10df9840515fceead160761465ec4241da8fef5",
       "name" : "PusherSwift",
       "container" : "PusherSwift.xcframework",
       "identifier" : "ios-arm64"

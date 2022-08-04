@@ -2,15 +2,15 @@
   "commitish" : "1.1.0",
   "iOS" : [
     {
-      "swiftToolchainVersion" : "5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)",
-      "hash" : "e8341e2897eaad43acfe6c480a9fe10fdaf77c315d19e98ee5b7fe864a0a92dc",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "7a3489ff226e3a1bc954dd611b3202a2477ebc9467b46dd4b059bed91301ba99",
       "name" : "TweetNacl",
       "container" : "TweetNacl.xcframework",
       "identifier" : "ios-arm64_armv7"
     },
     {
-      "swiftToolchainVersion" : "5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)",
-      "hash" : "bd252ed2d1fcb08e2404bcdafd9d1f51864ed63398295480d23f9c00fd0edb6c",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "f601c5ee0e60d5c3b1cfcf39ef13c741e8ef49cc44a153638a28daf48650fe88",
       "name" : "TweetNacl",
       "container" : "TweetNacl.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"

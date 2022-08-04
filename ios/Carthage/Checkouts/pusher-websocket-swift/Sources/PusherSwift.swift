@@ -2,14 +2,14 @@ import Foundation
 import NWWebSocket
 
 let PROTOCOL = 7
-let VERSION = "10.0.1"
+let VERSION = "10.1.1"
 // swiftlint:disable:next identifier_name
 let CLIENT_NAME = "pusher-websocket-swift"
 
 @objcMembers
 @objc open class Pusher: NSObject {
     public let connection: PusherConnection
-    open weak var delegate: PusherDelegate? = nil {
+    open weak var delegate: PusherDelegate? {
         willSet {
             self.connection.delegate = newValue
         }
@@ -51,7 +51,8 @@ let CLIENT_NAME = "pusher-websocket-swift"
         _ channelName: String,
         auth: PusherAuth? = nil,
         onMemberAdded: ((PusherPresenceChannelMember) -> Void)? = nil,
-        onMemberRemoved: ((PusherPresenceChannelMember) -> Void)? = nil
+        onMemberRemoved: ((PusherPresenceChannelMember) -> Void)? = nil,
+        onSubscriptionCountChanged: ((Int) -> Void)? = nil
     ) -> PusherChannel {
 
         let isEncryptedChannel = PusherChannel.isEncrypted(name: channelName)
@@ -64,7 +65,8 @@ let CLIENT_NAME = "pusher-websocket-swift"
             channelName: channelName,
             auth: auth,
             onMemberAdded: onMemberAdded,
-            onMemberRemoved: onMemberRemoved
+            onMemberRemoved: onMemberRemoved,
+            onSubscriptionCountChanged: onSubscriptionCountChanged
         )
     }
 
@@ -87,13 +89,15 @@ let CLIENT_NAME = "pusher-websocket-swift"
         channelName: String,
         auth: PusherAuth? = nil,
         onMemberAdded: ((PusherPresenceChannelMember) -> Void)? = nil,
-        onMemberRemoved: ((PusherPresenceChannelMember) -> Void)? = nil
+        onMemberRemoved: ((PusherPresenceChannelMember) -> Void)? = nil,
+        onSubscriptionCountChanged: ((Int) -> Void)? = nil
     ) -> PusherPresenceChannel {
         return self.connection.subscribeToPresenceChannel(
             channelName: channelName,
             auth: auth,
             onMemberAdded: onMemberAdded,
-            onMemberRemoved: onMemberRemoved
+            onMemberRemoved: onMemberRemoved,
+            onSubscriptionCountChanged: onSubscriptionCountChanged
         )
     }
 

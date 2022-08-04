@@ -26,21 +26,20 @@ class TiPusherModule: TiModule {
   func initialize(arguments: Array<Any>?) {
     guard let arguments = arguments, let params = arguments[0] as? [String: Any] else { return }
     guard let key = params["key"] as? String else { return }
-    
+    let proxyOptions = params["options"] as? [String: Any] ?? [:]
+
     let options = PusherClientOptions(
-      host: .cluster("eu"),
+      host: .cluster(proxyOptions["cluster"] as? String ?? "eu"),
       useTLS: true
     )
-    
-    if let proxyOptions = params["options"] as? [String: Any] {
-      if let authEndpoint = proxyOptions["authEndpoint"] as? String,
-         let accessToken = proxyOptions["accessToken"] as?  String {
-        let headers = proxyOptions["headers"] as? [String: String]
 
-        options.authMethod = AuthMethod.authRequestBuilder(authRequestBuilder: TiAuthRequestBuilder(authURL: authEndpoint,
-                                                                                                    accessToken: accessToken,
-                                                                                                    headers: headers))
-      }
+    if let authEndpoint = proxyOptions["authEndpoint"] as? String,
+       let accessToken = proxyOptions["accessToken"] as?  String {
+      let headers = proxyOptions["headers"] as? [String: String]
+      
+      options.authMethod = AuthMethod.authRequestBuilder(authRequestBuilder: TiAuthRequestBuilder(authURL: authEndpoint,
+                                                                                                  accessToken: accessToken,
+                                                                                                  headers: headers))
     }
     
     pusher = Pusher(
