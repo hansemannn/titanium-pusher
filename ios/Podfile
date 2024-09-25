@@ -1,0 +1,10 @@
+plugin 'cocoapods-binary'
+install! 'cocoapods', :integrate_targets => false
+
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '13.0'
+use_frameworks!
+
+target "TiPusher" do
+    pod 'PusherSwift', '~> 10.1.2'
+end

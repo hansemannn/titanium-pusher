@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000000000000000000000002 /* TitaniumKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000000000000000000001 /* TitaniumKit.xcframework */; };
 		3AB01BC627F1F78C0029181F /* TweetNacl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB01BC327F1F78C0029181F /* TweetNacl.xcframework */; };
 		3AB01BC727F1F78C0029181F /* NWWebSocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB01BC427F1F78C0029181F /* NWWebSocket.xcframework */; };
 		3AB01BC827F1F78C0029181F /* PusherSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB01BC527F1F78C0029181F /* PusherSwift.xcframework */; };
@@ -17,11 +18,10 @@
 		DB52E2401E9CCF8D00AAAEE0 /* TiPusher_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = DB52E23F1E9CCF8D00AAAEE0 /* TiPusher_Prefix.pch */; };
 		DB52E2431E9CD0F800AAAEE0 /* TiPusherModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB52E2421E9CD0F800AAAEE0 /* TiPusherModule.swift */; };
 		DB75E5161E9CD59000809B2D /* TiPusher.h in Headers */ = {isa = PBXBuildFile; fileRef = DB75E5151E9CD58100809B2D /* TiPusher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBB66221208481A800EAD6D9 /* TitaniumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB6621E2084819D00EAD6D9 /* TitaniumKit.framework */; };
-		000000000000000000000002 /* TitaniumKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000000000000000000001 /* TitaniumKit.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000000000000000000000001 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TitaniumKit.xcframework; path = "$(TITANIUM_SDK)/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<absolute>"; };
 		3AB01BC327F1F78C0029181F /* TweetNacl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TweetNacl.xcframework; path = platform/TweetNacl.xcframework; sourceTree = "<group>"; };
 		3AB01BC427F1F78C0029181F /* NWWebSocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NWWebSocket.xcframework; path = platform/NWWebSocket.xcframework; sourceTree = "<group>"; };
 		3AB01BC527F1F78C0029181F /* PusherSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PusherSwift.xcframework; path = platform/PusherSwift.xcframework; sourceTree = "<group>"; };
@@ -35,7 +35,6 @@
 		DB52E2411E9CD09900AAAEE0 /* titanium.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
 		DB52E2421E9CD0F800AAAEE0 /* TiPusherModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiPusherModule.swift; path = Classes/TiPusherModule.swift; sourceTree = "<group>"; };
 		DB75E5151E9CD58100809B2D /* TiPusher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TiPusher.h; path = Classes/TiPusher.h; sourceTree = "<group>"; };
-		000000000000000000000001 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "TitaniumKit.xcframework"; path = "$(TITANIUM_SDK)/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +43,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AB01BC627F1F78C0029181F /* TweetNacl.xcframework in Frameworks */,
-				DBB66221208481A800EAD6D9 /* TitaniumKit.framework in Frameworks */,
 				3AB01BC727F1F78C0029181F /* NWWebSocket.xcframework in Frameworks */,
 				DB34CDE6207B9EBD005F8E8C /* Foundation.framework in Frameworks */,
 				3AB01BC827F1F78C0029181F /* PusherSwift.xcframework in Frameworks */,
@@ -55,14 +53,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A2EB8352246E54600158B31 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				DBB6621E2084819D00EAD6D9 /* TitaniumKit.framework */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		DB258CA41F0964DE000D0D8D /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +93,6 @@
 				DB52E22C1E9CCD7000AAAEE0 /* TiPusher */,
 				DB52E22B1E9CCD7000AAAEE0 /* Products */,
 				DB34CDE2207B9D6A005F8E8C /* Frameworks */,
-				3A2EB8352246E54600158B31 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,15 +180,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		DBB6621E2084819D00EAD6D9 /* TitaniumKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = TitaniumKit.framework;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DB52E2281E9CCD7000AAAEE0 /* Resources */ = {
@@ -400,12 +380,17 @@
 					"-ObjC",
 					"$(inherited)",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcelerator.titanium-pusher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Titanium";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
@@ -444,11 +429,16 @@
 					"-ObjC",
 					"$(inherited)",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcelerator.titanium-pusher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Titanium";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
