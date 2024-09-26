@@ -14,4 +14,4 @@ FOUNDATION_EXPORT double TiPusherVersionNumber;
 //! Project version string for TiPusher.
 FOUNDATION_EXPORT const unsigned char TiPusherVersionString[];
 
-#import "TiPusherModuleAssets.h"
+#import <TiPusher/TiPusherModuleAssets.h>
