@@ -29,9 +29,9 @@ function injectSPMPackage(xobjs,
 		spmRemotePackageReference,
 		spmRepositoryURL, spmRepositoryVersionKind, spmRepositoryMinVersion) {
 
-	const swiftProductUUID = '123';
-	const pbxBuildFileUUID = '111'
-	const spmRemotePackageUUID = '111'
+	const swiftProductUUID = generateUUID24();
+	const pbxBuildFileUUID = generateUUID24();
+	const spmRemotePackageUUID = generateUUID24();
 
 	// PBXBuildFile
 	xobjs.PBXBuildFile[pbxBuildFileUUID + " \/* " +
@@ -135,3 +135,14 @@ function init(logger, config, cli) {
 	});
 }
 
+function generateUUID24() {
+    let chars = '0123456789ABCDEF'; // hexadecimal characters
+    let uuid = '';
+
+    for (let i = 0; i < 24; i++) {
+        let randomIndex = Math.floor(Math.random() * chars.length);
+        uuid += chars[randomIndex];
+    }
+
+    return uuid;
+}
