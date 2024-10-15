@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		000000000000000000000002 /* TitaniumKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000000000000000000001 /* TitaniumKit.xcframework */; };
-		3A716C052CA602A400866131 /* PusherSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3A716C042CA602A400866131 /* PusherSwift */; };
+		3C7D807C2CBEC39200622BC0 /* PusherSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7D80792CBEC34A00622BC0 /* PusherSwift.framework */; };
+		3C7D807D2CBEC39200622BC0 /* PusherSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7D80792CBEC34A00622BC0 /* PusherSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB24E03C20766AC90033B2B1 /* TiPusherChannelProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24E03B20766AC90033B2B1 /* TiPusherChannelProxy.swift */; };
 		DB34CDE0207B998A005F8E8C /* TiPusherModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34CDDE207B998A005F8E8C /* TiPusherModuleAssets.m */; };
 		DB34CDE1207B998A005F8E8C /* TiPusherModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34CDDF207B998A005F8E8C /* TiPusherModuleAssets.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,8 +19,40 @@
 		DB75E5161E9CD59000809B2D /* TiPusher.h in Headers */ = {isa = PBXBuildFile; fileRef = DB75E5151E9CD58100809B2D /* TiPusher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3C7D80782CBEC34A00622BC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 33831C891A9CF61600B124F1;
+			remoteInfo = PusherSwift;
+		};
+		3C7D807A2CBEC34A00622BC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 33831C941A9CF61600B124F1;
+			remoteInfo = PusherSwiftTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C7D807E2CBEC39200622BC0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3C7D807D2CBEC39200622BC0 /* PusherSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		000000000000000000000001 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TitaniumKit.xcframework; path = "$(TITANIUM_SDK)/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<absolute>"; };
+		000000000000000000000001 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TitaniumKit.xcframework; path = "/Users/p.saini/Library/Application Support/Titanium/mobilesdk/osx/12.1.1.GA/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<absolute>"; };
+		3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PusherSwift.xcodeproj; path = "pusher-socket-swift-depsincluded-main/PusherSwift.xcodeproj"; sourceTree = "<group>"; };
 		DB24E03B20766AC90033B2B1 /* TiPusherChannelProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiPusherChannelProxy.swift; path = Classes/TiPusherChannelProxy.swift; sourceTree = "<group>"; };
 		DB34CDDE207B998A005F8E8C /* TiPusherModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPusherModuleAssets.m; path = Classes/TiPusherModuleAssets.m; sourceTree = SOURCE_ROOT; };
 		DB34CDDF207B998A005F8E8C /* TiPusherModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPusherModuleAssets.h; path = Classes/TiPusherModuleAssets.h; sourceTree = SOURCE_ROOT; };
@@ -37,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A716C052CA602A400866131 /* PusherSwift in Frameworks */,
+				3C7D807C2CBEC39200622BC0 /* PusherSwift.framework in Frameworks */,
 				DB34CDE6207B9EBD005F8E8C /* Foundation.framework in Frameworks */,
 				000000000000000000000002 /* TitaniumKit.xcframework in Frameworks */,
 			);
@@ -46,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C7D80742CBEC34A00622BC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C7D80792CBEC34A00622BC0 /* PusherSwift.framework */,
+				3C7D807B2CBEC34A00622BC0 /* PusherSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		DB258CA41F0964DE000D0D8D /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +113,7 @@
 		DB34CDE2207B9D6A005F8E8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */,
 				DB34CDE5207B9EBD005F8E8C /* Foundation.framework */,
 				000000000000000000000001 /* TitaniumKit.xcframework */,
 			);
@@ -127,6 +170,7 @@
 				DB52E2261E9CCD7000AAAEE0 /* Frameworks */,
 				DB52E2271E9CCD7000AAAEE0 /* Headers */,
 				DB52E2281E9CCD7000AAAEE0 /* Resources */,
+				3C7D807E2CBEC39200622BC0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,6 +178,8 @@
 				DBB66220208481A400EAD6D9 /* PBXTargetDependency */,
 			);
 			name = TiPusher;
+			packageProductDependencies = (
+			);
 			productName = TiPusher;
 			productReference = DB52E22A1E9CCD7000AAAEE0 /* TiPusher.framework */;
 			productType = "com.apple.product-type.framework";
@@ -168,12 +214,35 @@
 			);
 			productRefGroup = DB52E22B1E9CCD7000AAAEE0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3C7D80742CBEC34A00622BC0 /* Products */;
+					ProjectRef = 3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DB52E2291E9CCD7000AAAEE0 /* TiPusher */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3C7D80792CBEC34A00622BC0 /* PusherSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PusherSwift.framework;
+			remoteRef = 3C7D80782CBEC34A00622BC0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3C7D807B2CBEC34A00622BC0 /* PusherSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PusherSwiftTests.xctest;
+			remoteRef = 3C7D807A2CBEC34A00622BC0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DB52E2281E9CCD7000AAAEE0 /* Resources */ = {
@@ -480,14 +549,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3A716C042CA602A400866131 /* PusherSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3A716C032CA602A400866131 /* XCRemoteSwiftPackageReference "pusher-websocket-swift" */;
-			productName = PusherSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DB52E2211E9CCD7000AAAEE0 /* Project object */;
 }

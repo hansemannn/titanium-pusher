@@ -1,0 +1,30 @@
+excluded:
+  - .build
+  - Carthage
+  - Package.swift
+  - Consumption-Tests/*/Carthage
+  - Consumption-Tests/*/Pods
+
+opt_in_rules:
+  - anyobject_protocol
+  - closure_end_indentation
+  - closure_spacing
+  - explicit_init
+  - modifier_order
+  - prefer_self_type_over_type_of_self
+  - sorted_imports
+  - test_case_accessibility
+  - unneeded_parentheses_in_closure_argument
+  - vertical_whitespace_between_cases
+  - vertical_whitespace_closing_braces
+
+identifier_name:
+  excluded:
+  - id
+  - ex
+  - to
+  - ws
+
+# This generates a compiler error if more than this many SwiftLint warnings are present
+# (This threshold can become more restrictive as remaining warnings are resolved via refactoring)
+warning_threshold: 100
