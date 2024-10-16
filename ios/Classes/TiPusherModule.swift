@@ -83,6 +83,10 @@ extension TiPusherModule: PusherDelegate {
   func changedConnectionState(from old: ConnectionState, to new: ConnectionState) {
     fireEvent("connectionchange", with: ["old": old.rawValue, "new": new.rawValue])
   }
+    
+    func subscribedToChannel(name: String) {
+        fireEvent("subscribe", with: ["name": name])
+    }
 }
 
 class TiAuthRequestBuilder: AuthRequestBuilderProtocol {

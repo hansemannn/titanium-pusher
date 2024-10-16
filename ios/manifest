@@ -2,7 +2,7 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 4.0.0
+version: 5.0.0
 apiversion: 2
 architectures: arm64 x86_64
 description: titanium-pusher is a Swift based Titanium module.
@@ -16,4 +16,4 @@ name: titanium-pusher
 moduleid: ti.pusher
 guid: e5011752-5cb4-47e7-b3b8-9a03bbca3e09
 platform: iphone
-minsdk: 9.2.0
+minsdk: 10.0.0

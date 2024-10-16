@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3AB01BC627F1F78C0029181F /* TweetNacl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB01BC327F1F78C0029181F /* TweetNacl.xcframework */; };
-		3AB01BC727F1F78C0029181F /* NWWebSocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB01BC427F1F78C0029181F /* NWWebSocket.xcframework */; };
-		3AB01BC827F1F78C0029181F /* PusherSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB01BC527F1F78C0029181F /* PusherSwift.xcframework */; };
+		000000000000000000000002 /* TitaniumKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000000000000000000001 /* TitaniumKit.xcframework */; };
+		3C7D807C2CBEC39200622BC0 /* PusherSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7D80792CBEC34A00622BC0 /* PusherSwift.framework */; };
+		3C7D807D2CBEC39200622BC0 /* PusherSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7D80792CBEC34A00622BC0 /* PusherSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB24E03C20766AC90033B2B1 /* TiPusherChannelProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24E03B20766AC90033B2B1 /* TiPusherChannelProxy.swift */; };
 		DB34CDE0207B998A005F8E8C /* TiPusherModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34CDDE207B998A005F8E8C /* TiPusherModuleAssets.m */; };
 		DB34CDE1207B998A005F8E8C /* TiPusherModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34CDDF207B998A005F8E8C /* TiPusherModuleAssets.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -17,14 +17,42 @@
 		DB52E2401E9CCF8D00AAAEE0 /* TiPusher_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = DB52E23F1E9CCF8D00AAAEE0 /* TiPusher_Prefix.pch */; };
 		DB52E2431E9CD0F800AAAEE0 /* TiPusherModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB52E2421E9CD0F800AAAEE0 /* TiPusherModule.swift */; };
 		DB75E5161E9CD59000809B2D /* TiPusher.h in Headers */ = {isa = PBXBuildFile; fileRef = DB75E5151E9CD58100809B2D /* TiPusher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBB66221208481A800EAD6D9 /* TitaniumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB6621E2084819D00EAD6D9 /* TitaniumKit.framework */; };
-		000000000000000000000002 /* TitaniumKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000000000000000000001 /* TitaniumKit.xcframework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3C7D80782CBEC34A00622BC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 33831C891A9CF61600B124F1;
+			remoteInfo = PusherSwift;
+		};
+		3C7D807A2CBEC34A00622BC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 33831C941A9CF61600B124F1;
+			remoteInfo = PusherSwiftTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C7D807E2CBEC39200622BC0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3C7D807D2CBEC39200622BC0 /* PusherSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		3AB01BC327F1F78C0029181F /* TweetNacl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TweetNacl.xcframework; path = platform/TweetNacl.xcframework; sourceTree = "<group>"; };
-		3AB01BC427F1F78C0029181F /* NWWebSocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NWWebSocket.xcframework; path = platform/NWWebSocket.xcframework; sourceTree = "<group>"; };
-		3AB01BC527F1F78C0029181F /* PusherSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PusherSwift.xcframework; path = platform/PusherSwift.xcframework; sourceTree = "<group>"; };
+		000000000000000000000001 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TitaniumKit.xcframework; path = "$(TITANIUM_SDK)/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<absolute>"; };
+		3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PusherSwift.xcodeproj; path = "pusher-socket-swift-depsincluded-main/PusherSwift.xcodeproj"; sourceTree = "<group>"; };
 		DB24E03B20766AC90033B2B1 /* TiPusherChannelProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiPusherChannelProxy.swift; path = Classes/TiPusherChannelProxy.swift; sourceTree = "<group>"; };
 		DB34CDDE207B998A005F8E8C /* TiPusherModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPusherModuleAssets.m; path = Classes/TiPusherModuleAssets.m; sourceTree = SOURCE_ROOT; };
 		DB34CDDF207B998A005F8E8C /* TiPusherModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiPusherModuleAssets.h; path = Classes/TiPusherModuleAssets.h; sourceTree = SOURCE_ROOT; };
@@ -35,7 +63,6 @@
 		DB52E2411E9CD09900AAAEE0 /* titanium.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
 		DB52E2421E9CD0F800AAAEE0 /* TiPusherModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiPusherModule.swift; path = Classes/TiPusherModule.swift; sourceTree = "<group>"; };
 		DB75E5151E9CD58100809B2D /* TiPusher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TiPusher.h; path = Classes/TiPusher.h; sourceTree = "<group>"; };
-		000000000000000000000001 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "TitaniumKit.xcframework"; path = "$(TITANIUM_SDK)/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,11 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AB01BC627F1F78C0029181F /* TweetNacl.xcframework in Frameworks */,
-				DBB66221208481A800EAD6D9 /* TitaniumKit.framework in Frameworks */,
-				3AB01BC727F1F78C0029181F /* NWWebSocket.xcframework in Frameworks */,
+				3C7D807C2CBEC39200622BC0 /* PusherSwift.framework in Frameworks */,
 				DB34CDE6207B9EBD005F8E8C /* Foundation.framework in Frameworks */,
-				3AB01BC827F1F78C0029181F /* PusherSwift.xcframework in Frameworks */,
 				000000000000000000000002 /* TitaniumKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,12 +79,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A2EB8352246E54600158B31 /* Recovered References */ = {
+		3C7D80742CBEC34A00622BC0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DBB6621E2084819D00EAD6D9 /* TitaniumKit.framework */,
+				3C7D80792CBEC34A00622BC0 /* PusherSwift.framework */,
+				3C7D807B2CBEC34A00622BC0 /* PusherSwiftTests.xctest */,
 			);
-			name = "Recovered References";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		DB258CA41F0964DE000D0D8D /* Misc */ = {
@@ -88,9 +113,7 @@
 		DB34CDE2207B9D6A005F8E8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3AB01BC427F1F78C0029181F /* NWWebSocket.xcframework */,
-				3AB01BC527F1F78C0029181F /* PusherSwift.xcframework */,
-				3AB01BC327F1F78C0029181F /* TweetNacl.xcframework */,
+				3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */,
 				DB34CDE5207B9EBD005F8E8C /* Foundation.framework */,
 				000000000000000000000001 /* TitaniumKit.xcframework */,
 			);
@@ -103,7 +126,6 @@
 				DB52E22C1E9CCD7000AAAEE0 /* TiPusher */,
 				DB52E22B1E9CCD7000AAAEE0 /* Products */,
 				DB34CDE2207B9D6A005F8E8C /* Frameworks */,
-				3A2EB8352246E54600158B31 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +170,7 @@
 				DB52E2261E9CCD7000AAAEE0 /* Frameworks */,
 				DB52E2271E9CCD7000AAAEE0 /* Headers */,
 				DB52E2281E9CCD7000AAAEE0 /* Resources */,
+				3C7D807E2CBEC39200622BC0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +178,8 @@
 				DBB66220208481A400EAD6D9 /* PBXTargetDependency */,
 			);
 			name = TiPusher;
+			packageProductDependencies = (
+			);
 			productName = TiPusher;
 			productReference = DB52E22A1E9CCD7000AAAEE0 /* TiPusher.framework */;
 			productType = "com.apple.product-type.framework";
@@ -165,7 +190,8 @@
 		DB52E2211E9CCD7000AAAEE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1320;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					DB52E2291E9CCD7000AAAEE0 = {
 						CreatedOnToolsVersion = 8.3;
@@ -183,8 +209,17 @@
 				Base,
 			);
 			mainGroup = DB52E2201E9CCD7000AAAEE0;
+			packageReferences = (
+				3A716C032CA602A400866131 /* XCRemoteSwiftPackageReference "pusher-websocket-swift" */,
+			);
 			productRefGroup = DB52E22B1E9CCD7000AAAEE0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3C7D80742CBEC34A00622BC0 /* Products */;
+					ProjectRef = 3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DB52E2291E9CCD7000AAAEE0 /* TiPusher */,
@@ -193,10 +228,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		DBB6621E2084819D00EAD6D9 /* TitaniumKit.framework */ = {
+		3C7D80792CBEC34A00622BC0 /* PusherSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = TitaniumKit.framework;
+			path = PusherSwift.framework;
+			remoteRef = 3C7D80782CBEC34A00622BC0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3C7D807B2CBEC34A00622BC0 /* PusherSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PusherSwiftTests.xctest;
+			remoteRef = 3C7D807A2CBEC34A00622BC0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -271,8 +314,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -288,6 +333,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -339,8 +385,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -350,6 +398,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -375,6 +424,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -392,6 +442,7 @@
 					"@loader_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				OTHER_CFLAGS = (
 					"-DDEBUG",
 					"-DTI_POST_1_2",
@@ -400,12 +451,17 @@
 					"-ObjC",
 					"$(inherited)",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcelerator.titanium-pusher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Titanium";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
@@ -422,6 +478,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -439,16 +496,22 @@
 					"@loader_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcelerator.titanium-pusher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Titanium";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
@@ -475,6 +538,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A716C032CA602A400866131 /* XCRemoteSwiftPackageReference "pusher-websocket-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pusher/pusher-websocket-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.1.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = DB52E2211E9CCD7000AAAEE0 /* Project object */;
 }
