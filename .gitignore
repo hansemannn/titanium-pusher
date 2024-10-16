@@ -1,4 +1,7 @@
-/android/build
-/ios/build
 .DS_STORE
+
+/android/build
 /android/dist
+
+/ios/build
+/ios/dist
