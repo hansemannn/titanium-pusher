@@ -28,10 +28,10 @@ class TiPusherChannelProxy: TiProxy {
     guard let arguments = arguments, let eventName = arguments[0] as? String else { return }
     guard let channel = channel else { return }
     
-    let _ = channel.bind(eventName: eventName, eventCallback: { (data: Any?) -> Void in
-      if let data = data as? [String : AnyObject] {
-        self.fireEvent("data", with: ["data" : data])
-      }
+    let _ = channel.bind(eventName: eventName, eventCallback: { (event: PusherEvent) -> Void in
+        if let data = event.data {
+            self.fireEvent("data", with: ["rawData" : data])
+        }
     })
   }
   
