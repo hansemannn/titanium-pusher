@@ -51,7 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		000000000000000000000001 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TitaniumKit.xcframework; path = "/Users/p.saini/Library/Application Support/Titanium/mobilesdk/osx/12.1.1.GA/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<absolute>"; };
+		000000000000000000000001 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TitaniumKit.xcframework; path = "$(TITANIUM_SDK)/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<absolute>"; };
 		3C7D80732CBEC34A00622BC0 /* PusherSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PusherSwift.xcodeproj; path = "pusher-socket-swift-depsincluded-main/PusherSwift.xcodeproj"; sourceTree = "<group>"; };
 		DB24E03B20766AC90033B2B1 /* TiPusherChannelProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiPusherChannelProxy.swift; path = Classes/TiPusherChannelProxy.swift; sourceTree = "<group>"; };
 		DB34CDDE207B998A005F8E8C /* TiPusherModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiPusherModuleAssets.m; path = Classes/TiPusherModuleAssets.m; sourceTree = SOURCE_ROOT; };
