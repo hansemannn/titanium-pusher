@@ -120,17 +120,6 @@ function init(logger, config, cli) {
 				"PusherSwift", "PusherSwift",
 				"pusher-websocket-swift",
 				"https://github.com/pusher/pusher-websocket-swift.git", "upToNextMajorVersion", "10.1.5");
-
-			// PBXNativeTarget
-			Object.keys(xobjs.PBXNativeTarget).forEach(function (targetUuid) {
-				var target = xobjs.PBXNativeTarget[targetUuid];
-				if (target && typeof target === 'object') {
-					xobjs.XCConfigurationList[target.buildConfigurationList].buildConfigurations.forEach(function (buildConf) {
-						var buildSettings = xobjs.XCBuildConfiguration[buildConf.value].buildSettings;
-						buildSettings.ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 'YES';
-					});
-				}
-			});
 		}
 	});
 }
