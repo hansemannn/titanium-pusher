@@ -1,12 +1,12 @@
 /**
- * Ti.SwiftSupport
+ * Ti.SPM
  * Copyright TiDev, Inc. 04/07/2022-Present. All Rights Reserved.
  * All Rights Reserved.
  */
 
 'use strict';
 
-exports.id = 'ti.swiftsupport';
+exports.id = 'ti.spm';
 exports.cliVersion = '>=3.2';
 exports.init = init;
 
