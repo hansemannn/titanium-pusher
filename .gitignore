@@ -2,3 +2,5 @@
 /ios/build
 .DS_STORE
 /android/dist
+ios/titanium-pusher.xcodeproj/xcuserdata
+ios/titanium-pusher.xcodeproj/project.xcworkspace/xcuserdata
