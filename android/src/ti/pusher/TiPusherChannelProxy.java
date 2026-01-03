@@ -27,7 +27,6 @@ public class TiPusherChannelProxy extends KrollProxy
 {
 	// Standard Debugging variables
 	private static final String LCAT = "ChannelProxy";
-	private static final boolean DBG = TiConfig.LOGD;
 
 	private PrivateChannel channel;
 

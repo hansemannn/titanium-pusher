@@ -20,6 +20,7 @@ import com.pusher.client.channel.PrivateChannel;
 import com.pusher.client.connection.ConnectionEventListener;
 import com.pusher.client.connection.ConnectionStateChange;
 import com.pusher.client.util.HttpAuthorizer;
+import com.pusher.client.util.HttpChannelAuthorizer;
 
 import java.util.HashMap;
 
@@ -63,9 +64,9 @@ public class TitaniumPusherModule extends KrollModule
 				}
 			}
 
-			HttpAuthorizer authorizer = new HttpAuthorizer(authEndpoint);
+			HttpChannelAuthorizer authorizer = new HttpChannelAuthorizer(authEndpoint);
 			authorizer.setHeaders(nativeHeaders);
-			options.setAuthorizer(authorizer);
+			options.setChannelAuthorizer(authorizer);
 		}
 
 		options.setCluster("eu");
